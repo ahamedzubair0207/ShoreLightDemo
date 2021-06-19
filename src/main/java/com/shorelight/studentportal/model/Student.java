@@ -12,6 +12,12 @@ public class Student  {
     @Column(name = "name")
     private String name;
 
+    @Column(name = "location")
+    private String location;
+
+    @Column(name = "email")
+    private String email;
+
     @Column(name = "status")
     private String status;
 
@@ -38,9 +44,11 @@ public class Student  {
 
     public Student() {}
 
-    public Student(long id, String name, String status, double gpa, int ielts, int sat, int toefl, String prequalified, String passportVisa, String tuitionStatus) {
+    public Student(long id, String name, String location, String email, String status, double gpa, int ielts, int sat, int toefl, String prequalified, String passportVisa, String tuitionStatus) {
         this.id = id;
         this.name = name;
+        this.location = location;
+        this.email = email;
         this.status = status;
         this.gpa = gpa;
         this.ielts = ielts;
@@ -131,11 +139,29 @@ public class Student  {
         this.tuitionStatus = tuitionStatus;
     }
 
+    public String getLocation() {
+        return location;
+    }
+
+    public void setLocation(String location) {
+        this.location = location;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
     @Override
     public String toString() {
         return "Student{" +
                 "id=" + id +
                 ", name='" + name + '\'' +
+                ", location='" + location + '\'' +
+                ", email='" + email + '\'' +
                 ", status='" + status + '\'' +
                 ", gpa=" + gpa +
                 ", ielts=" + ielts +

@@ -63,6 +63,8 @@ public class StudentController {
             Student _student = studentData.get();
             _student.setName(student.getName());
             _student.setStatus(student.getStatus());
+            _student.setEmail(student.getEmail());
+            _student.setLocation(student.getLocation());
             _student.setTuitionStatus(student.getTuitionStatus());
             return new ResponseEntity<>(studentRepository.save(_student), HttpStatus.OK);
         } else {
